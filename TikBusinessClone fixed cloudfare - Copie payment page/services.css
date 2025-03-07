@@ -1,0 +1,480 @@
+/* Services Hero Section */
+.services-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                      url('https://images.unsplash.com/photo-1542751371-adc38448a05e');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.services-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.services-hero .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+    letter-spacing: 4px;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Mod Menu Section */
+.mod-menu {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.mod-menu h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+/* Update the service showcase grid */
+.service-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.showcase-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.showcase-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.showcase-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.showcase-item:hover img {
+    transform: scale(1.05);
+}
+
+.showcase-content {
+    padding: 1.5rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+    color: white;
+}
+
+.showcase-content h3 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.showcase-content p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color) !important;
+}
+
+/* Add hover effect */
+.showcase-item::after {
+    content: 'View Details';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.showcase-item:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .service-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Accounts Section */
+.accounts {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.accounts h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pricing-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--accent-color);
+    position: relative;
+}
+
+.pricing-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.pricing-card ul li {
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+/* Payment Methods Section */
+.payment-methods {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.payment-methods h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.payment-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--light-gray);
+    border-radius: 10px;
+    transition: transform 0.3s;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.payment-item:hover {
+    transform: translateY(-5px);
+}
+
+.payment-item i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.payment-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.payment-item p {
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+}
+
+.payment-info {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.payment-name {
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+.payment-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.crypto-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.crypto-list li {
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+.crypto-list li i {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.payment-notice {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.payment-notice i {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.payment-notice p {
+    color: var(--dark-gray);
+    margin: 0;
+}
+
+.payment-notice .btn {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .payment-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto 2rem;
+    }
+
+    .payment-notice {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .payment-notice .btn {
+        margin: 1rem auto 0;
+    }
+}
+
+/* Warranty Section */
+.warranty {
+    padding: 5rem 0;
+    text-align: center;
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.warranty h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.warranty p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.warranty-notice {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.warranty-notice i {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.warranty .btn {
+    margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .service-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .services-hero .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .payment-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Services Grid */
+.services-grid {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.service-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: center;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.service-item:nth-child(even) {
+    direction: rtl;
+}
+
+.service-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.service-content {
+    direction: ltr;
+    padding: 2rem;
+}
+
+.service-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.service-content p {
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+}
+
+.service-content ul {
+    list-style: none;
+}
+
+.service-content ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-content ul li:before {
+    content: '✓';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Vouches - Riker Gaming Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="vouches.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gamepad"></i>
+                Riker Services
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="all-services.html">All Services</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="vouches.html">Vouches</a></li>
+                    <li><a href="youtube.html">YouTube</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="payment.html">Payment</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="vouches-hero">
+            <div class="container">
+                <h1>Client Vouches</h1>
+                <p>Over 900+ Happy Customers and Growing</p>
+            </div>
+        </section>
+
+        <section class="vouches-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="number">900+</div>
+                        <p>Verified Vouches</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="number">100%</div>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="number">5</div>
+                        <p>Years of Service</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="vouches-grid">
+            <div class="container">
+                <div class="vouch-cards" id="vouchContainer">
+                    <!-- Recent Vouches -->
+                    <div class="vouch-card">
+                        <div class="vouch-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Fast delivery, exactly what I wanted! Perfect mod menu for PG3D!"</p>
+                            <div class="vouch-info">
+                                <span class="client">Alex M.</span>
+                                <span class="service">Pixel Gun 3D Mod Menu</span>
+                                <span class="date">February 2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional vouches will be loaded dynamically -->
+                </div>
+
+                <div class="load-more">
+                    <button class="btn" id="loadMoreBtn">Load More Vouches</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="join-discord">
+            <div class="container">
+                <h2>Join Our Discord Community</h2>
+                <p>See all vouches and join our growing community of satisfied customers</p>
+                <a href="https://discord.gg/tzE9yWBwqx" class="btn btn-accent">Join Discord</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="all-services.html">All Services</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="vouches.html">Vouches</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Payment Methods</h3>
+                    <ul>
+                        <li><i class="fab fa-paypal"></i> PayPal</li>
+                        <li><i class="fas fa-gift"></i> Steam Gift Cards</li>
+                        <li><i class="fab fa-discord"></i> Discord Nitro</li>
+                        <li><i class="fab fa-bitcoin"></i> Crypto (BTC, ETH, USDT)</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://discord.gg/tzE9yWBwqx"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.youtube.com/@Riker_pgd3_account"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Vouch data generator
+        const services = ['Pixel Gun 3D Mod Menu', 'COD Mod Menu', 'Brawl Stars Account', 'Supercell Account', 'Roblox Mods'];
+        const months = ['January', 'February', 'March', 'April', 'May'];
+        const comments = [
+            "Amazing service! Fast and reliable!",
+            "Best mod menu I've ever used!",
+            "Super quick delivery and great support!",
+            "Perfect account, exactly as described!",
+            "100% recommended, will buy again!",
+            "Excellent service and amazing features!",
+            "Very professional and helpful!",
+            "Works perfectly, no issues at all!",
+            "Great value for money!",
+            "Fast response and delivery!"
+        ];
+
+        let currentPage = 1;
+        const vouchesPerPage = 10;
+        const totalVouches = 900;
+
+        function generateVouch() {
+            const randomService = services[Math.floor(Math.random() * services.length)];
+            const randomMonth = months[Math.floor(Math.random() * months.length)];
+            const randomComment = comments[Math.floor(Math.random() * comments.length)];
+            const randomName = `${String.fromCharCode(65 + Math.floor(Math.random() * 26))}. ${String.fromCharCode(65 + Math.floor(Math.random() * 26))}.`;
+
+            return `
+                <div class="vouch-card">
+                    <div class="vouch-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"${randomComment}"</p>
+                        <div class="vouch-info">
+                            <span class="client">${randomName}</span>
+                            <span class="service">${randomService}</span>
+                            <span class="date">${randomMonth} 2024</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function loadMoreVouches() {
+            const container = document.getElementById('vouchContainer');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+            for(let i = 0; i < vouchesPerPage; i++) {
+                container.insertAdjacentHTML('beforeend', generateVouch());
+            }
+
+            currentPage++;
+
+            if(currentPage * vouchesPerPage >= totalVouches) {
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        document.getElementById('loadMoreBtn').addEventListener('click', loadMoreVouches);
+
+        // Load initial vouches
+        loadMoreVouches();
+    </script>
+</body>
+</html>

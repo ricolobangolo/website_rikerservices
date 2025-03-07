@@ -1,0 +1,269 @@
+:root {
+    --primary-color: #7B2CBF;
+    --secondary-color: #5A189A;
+    --accent-color: #FF9100;
+    --text-color: #2D2D2D;
+    --light-gray: #F8F9FA;
+    --dark-gray: #343A40;
+    --white: #FFFFFF;
+    --success: #28A745;
+    --warning: #FFC107;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 0.5rem;
+    color: var(--accent-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+    background-color: var(--light-gray);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-icon {
+    position: relative;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.cart-icon:hover {
+    color: var(--accent-color);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none; /* Initially hidden, shown when items are in cart */
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+}
+
+.btn-accent:hover {
+    background-color: #FF7B00;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 4rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.toast i {
+    font-size: 1.2rem;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
